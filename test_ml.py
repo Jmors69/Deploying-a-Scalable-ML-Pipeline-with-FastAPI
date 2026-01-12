@@ -1,24 +1,27 @@
-# TODO: add necessary import
-
-# TODO: implement the first test. Change the function name and input as needed
-def test_one():
-    """
-    # add description for the first test
-    """
-    # Your code here
+import numpy as np
+from ml.model import train_model, inference, compute_model_metrics
 
 
-# TODO: implement the second test. Change the function name and input as needed
-def test_two():
-    """
-    # add description for the second test
-    """
-    # Your code here
+def test_train_model_returns_model():
+    X = np.random.rand(20, 5)
+    y = np.random.randint(0, 2, 20)
+    model = train_model(X, y)
+    assert model is not None
 
 
-# TODO: implement the third test. Change the function name and input as needed
-def test_three():
-    """
-    # add description for the third test
-    """
-    # Your code here
+def test_inference_output_shape():
+    X = np.random.rand(20, 5)
+    y = np.random.randint(0, 2, 20)
+    model = train_model(X, y)
+    preds = inference(model, X)
+    assert len(preds) == len(X)
+
+
+def test_compute_model_metrics_range():
+    y_true = np.array([0, 1, 1, 0])
+    y_pred = np.array([0, 1, 0, 0])
+    precision, recall, fbeta = compute_model_metrics(y_true, y_pred)
+    assert 0.0 <= precision <= 1.0
+    assert 0.0 <= recall <= 1.0
+    assert 0.0 <= fbeta <= 1.0
+
