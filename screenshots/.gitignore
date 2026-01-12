@@ -1,11 +1,4 @@
-# Ignore all image files in screenshots folder
-*.png
-*.jpg
-*.jpeg
-*.gif
-*.webp
 
-# Ignore OS junk
 .DS_Store
 Thumbs.db
 
