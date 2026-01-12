@@ -24,4 +24,3 @@ def test_compute_model_metrics_range():
     assert 0.0 <= precision <= 1.0
     assert 0.0 <= recall <= 1.0
     assert 0.0 <= fbeta <= 1.0
-
